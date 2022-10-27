@@ -25,6 +25,10 @@ import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ClienteServicio } from './servicios/cliente.service';
+import { LoginService } from './servicios/login.service';
+import { AuthGuard } from './guardianes/auth.guard';
+import { ConfiguracionServicio } from './servicios/configuracion.service';
+import { ConfiguracionGuard } from './guardianes/configuracion.guard';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { ClienteServicio } from './servicios/cliente.service';
     FlashMessagesModule.forRoot()
   ],
   providers: [
-    ClienteServicio
+    ClienteServicio,
+    LoginService,
+    AuthGuard,
+    ConfiguracionServicio,
+    ConfiguracionGuard
   ],
   bootstrap: [AppComponent],
 })
